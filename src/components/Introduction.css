@@ -3,29 +3,31 @@
 }
 
 .name {
+  font-family: 'Bitcount Grid Double', sans-serif;
   font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
-  color: #111;
+  color: #fff;
 }
 
 .bio {
+  font-family: 'Roboto Slab', serif;
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #444;
+  color: #e8f4f8;
   max-width: 500px;
   margin: 0 auto;
 }
 
 .bio a {
-  color: #1772d0;
+  color: #fff;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .bio a:hover {
-  color: #f09228;
+  color: #ffd480;
 }
 
 @media (max-width: 480px) {

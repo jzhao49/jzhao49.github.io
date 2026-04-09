@@ -5,7 +5,7 @@ function ProfileImage() {
     <div className="profile-image-wrapper">
       <img
         className="profile-image"
-        src="/images/Headshot.jepg"
+        src="/images/Headshot.jpeg"
         alt="Justin Zhao"
       />
     </div>

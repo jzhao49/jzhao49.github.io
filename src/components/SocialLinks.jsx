@@ -1,5 +1,6 @@
 import { FiMail } from 'react-icons/fi'
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import { HiOutlineDocumentText } from 'react-icons/hi'
 import './SocialLinks.css'
 
 const links = [
@@ -7,16 +8,25 @@ const links = [
     href: 'mailto:justinzhao2013@gmail.com',
     icon: <FiMail />,
     label: 'Email',
+    tooltip: 'Who even uses this anymore? (Email)',
   },
   {
     href: 'https://www.linkedin.com/in/jzhao49/',
     icon: <FaLinkedinIn />,
     label: 'LinkedIn',
+    tooltip: 'LARP-ing to the max (LinkedIn)',
   },
   {
     href: 'https://github.com/jzhao49',
     icon: <FaGithub />,
     label: 'GitHub',
+    tooltip: 'Beep boop (GitHub)',
+  },
+  {
+    href: '/data/JDZ_Resume_20260409.pdf',
+    icon: <HiOutlineDocumentText />,
+    label: 'Resume',
+    tooltip: 'My professional life on a single PDF (Resume)',
   },
 ]
 
@@ -33,6 +43,7 @@ function SocialLinks() {
           aria-label={link.label}
         >
           {link.icon}
+          <span className="social-tooltip">{link.tooltip}</span>
         </a>
       ))}
     </div>

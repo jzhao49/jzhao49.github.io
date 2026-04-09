@@ -86,6 +86,8 @@
   max-width: 700px;
   margin: 0 auto 4rem;
   animation: fadeUp 0.6s ease-out;
+  position: relative;
+  z-index: 1;
 }
 
 .poker-ledger-title {
@@ -174,6 +176,8 @@
   max-width: 900px;
   margin: 0 auto 5rem;
   animation: fadeUp 0.6s ease-out 0.15s both;
+  position: relative;
+  z-index: 1;
 }
 
 .feature-card {
@@ -238,6 +242,8 @@
   max-width: 900px;
   margin: 0 auto;
   animation: fadeUp 0.6s ease-out 0.3s both;
+  position: relative;
+  z-index: 1;
 }
 
 .gallery-heading {

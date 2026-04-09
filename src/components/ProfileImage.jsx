@@ -10,13 +10,13 @@ const COLORS = ['#ff4444', '#ffdd44', '#44bbff', '#ff44dd', '#44ff88', '#ffaa22'
 function createParticle() {
   return {
     id: Math.random(),
-    x: randomBetween(10, 90),
-    y: randomBetween(10, 90),
-    particles: Array.from({ length: 12 }, () => ({
+    x: randomBetween(5, 95),
+    y: randomBetween(5, 95),
+    particles: Array.from({ length: 18 }, () => ({
       angle: randomBetween(0, 360),
-      distance: randomBetween(20, 80),
+      distance: randomBetween(30, 120),
       color: COLORS[Math.floor(Math.random() * COLORS.length)],
-      size: randomBetween(3, 6),
+      size: randomBetween(3, 7),
       delay: randomBetween(0, 0.15),
     })),
   }
@@ -29,14 +29,14 @@ function ProfileImage() {
 
   const startFireworks = useCallback(() => {
     setHovering(true)
-    setFireworks([createParticle(), createParticle()])
+    setFireworks([createParticle(), createParticle(), createParticle()])
     intervalRef.current = setInterval(() => {
       setFireworks((prev) => {
-        const next = [...prev, createParticle()]
-        if (next.length > 15) next.shift()
+        const next = [...prev, createParticle(), createParticle()]
+        if (next.length > 30) next.splice(0, 2)
         return next
       })
-    }, 300)
+    }, 150)
   }, [])
 
   const stopFireworks = useCallback(() => {

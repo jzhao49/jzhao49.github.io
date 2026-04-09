@@ -9,6 +9,26 @@
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
   color: #fff;
+  display: inline-flex;
+}
+
+.name-letter {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.name-letter.ripple {
+  animation: ripple 0.5s ease-in-out infinite;
+}
+
+@keyframes ripple {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .bio {

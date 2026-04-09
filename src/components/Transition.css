@@ -18,15 +18,6 @@
   animation: contractToCenter 0.6s ease-out forwards;
 }
 
-/* Reverse: contract from edges, then expand to edges */
-.transition-overlay.contracting-in {
-  animation: contractFromEdges 0.6s ease-in forwards;
-}
-
-.transition-overlay.expanding-out {
-  animation: expandToEdges 0.6s ease-out forwards;
-}
-
 @keyframes expandFromCenter {
   0% {
     clip-path: circle(0% at 50% 50%);
@@ -45,20 +36,83 @@
   }
 }
 
-@keyframes contractFromEdges {
+/* Reverse: curtain effect */
+.curtain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #000;
+}
+
+.curtain-left {
+  left: 0;
+}
+
+.curtain-right {
+  right: 0;
+}
+
+/* Close: curtains slide in from edges to meet in the middle */
+.curtain-left.curtain-close {
+  animation: slideInLeft 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.curtain-right.curtain-close {
+  animation: slideInRight 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Open: curtains slide apart to reveal the page */
+.curtain-left.curtain-open {
+  animation: slideOutLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.curtain-right.curtain-open {
+  animation: slideOutRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideInLeft {
   0% {
-    clip-path: inset(0 100% 0 100%);
+    transform: translateX(-100%);
   }
   100% {
-    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
   }
 }
 
-@keyframes expandToEdges {
+@keyframes slideInRight {
   0% {
-    clip-path: inset(0 0 0 0);
+    transform: translateX(100%);
   }
   100% {
-    clip-path: inset(0 100% 0 100%);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
